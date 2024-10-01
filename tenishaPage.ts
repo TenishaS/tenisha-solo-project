@@ -12,12 +12,20 @@ export class soloProject extends BasePage{
     sync: By=By.xpath('(//a[@class="nav-button"])[7]')
     //test2
     insurance: By=By.id('header_shield_link')
-    eyemed: By=By.xpath('(//div[@class="selectize-input items has-options ng-valid ng-dirty full has-items"])')
+    eyemed: By=By.xpath('(//input)[54]')
     firstName: By=By.id('firstname')
     lastName: By=By.id('lastname')
     DOB: By=By.id('date-of-birth2')
     zip: By=By.id('zipcode')
     //test3
+    findaStore: By=By.xpath('(//a[@class="ct_Link_Default_Medium"])[1]')
+    zipCode: By=By.xpath('(//input[@name="locationEntry"])[2]')
+    //test4
+    search: By=By.xpath('(//svg[@class="icon"])[19]')
+    prada: By=By.css('.ais-SearchBox-input')
+    //test5
+    language: By=By.css('.selected-language')
+    selectEspanol: By=By.css('.selected-language')
 
     constructor(){
         super({url: "https://www.lenscrafters.com/lc-us"})
