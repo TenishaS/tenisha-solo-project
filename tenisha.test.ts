@@ -5,7 +5,7 @@ const fs = require('fs');
 test('test1', async () => {
     await lc.navigate();
     await lc.click(lc.eyeglasses);
-    await lc.click(lc.sunglasses);
+    //await lc.click(lc.sunglasses);
     await lc.click(lc.contacts);
     await lc.click(lc.lenses);
     await lc.click(lc.brands);
@@ -18,7 +18,8 @@ test('test1', async () => {
 
 test('test2', async () => {
   await lc.navigate();
-  await lc.click(lc.insurance);
+  await lc.click(lc.sync);
+  await lc.click(lc.insureClick);
   await lc.driver.sleep(2000)
   await lc.setInput(lc.eyemed,'EyeMed\n');
   await lc.setInput(lc.firstName,'Ashly');
@@ -36,9 +37,24 @@ test('test2', async () => {
 test('test3', async () => {
     await lc.navigate();
     await lc.click(lc.findaStore)
-    await lc.setInput(lc.zip,'33323');
+    await fs.writeFile(`${__dirname}/findaStore.png`, 
+        await lc.driver.takeScreenshot(), 'base64', (e) => {
+        if (e) console.error(e)
+    else console.log('page saved'); 
+    }); 
 });
 
 test('test4', async () => {
-    
-}
+await lc.navigate();
+await lc.driver.sleep (2000)
+await lc.click(lc.sunglasses);
+await lc.click(lc.shopSunglasses);
+await lc.driver.sleep (2000)
+await lc.click(lc.versace);
+await lc.click(lc.addTobag);
+});
+test('test5', async () => {
+    await lc.navigate();
+    await lc.click(lc.UnitedStatesEspanol)
+    await lc.driver.quit()
+})

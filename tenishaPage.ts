@@ -4,28 +4,30 @@ import { By } from "selenium-webdriver";
 export class soloProject extends BasePage{
     //test1
     eyeglasses: By=By.id('eyeglasses')
-    sunglasses: By=By.xpath('(//a[@class="nav-button"])[2]')
-    contacts: By=By.xpath('(//a[@class="nav-button"])[3]')
-    lenses: By=By.xpath('(//a[@class="nav-button"])[4]')
-    brands: By=By.xpath('(//a[@class="nav-button"])[5]')
+    sunglasses: By=By.id('sunglasses')
+    contacts: By=By.id('contact-lenses')
+    lenses: By=By.id('lenses')
+    brands: By=By.id('brands')
     eyeExam: By=By.id('eye-exam')
-    sync: By=By.xpath('(//a[@class="nav-button"])[7]')
+    sync: By=By.id('sync-insurance')
     //test2
-    insurance: By=By.id('header_shield_link')
+insureClick: By = By.xpath('(//*[@class="icon"])[22]')
     eyemed: By=By.xpath('(//input)[54]')
     firstName: By=By.id('firstname')
     lastName: By=By.id('lastname')
     DOB: By=By.id('date-of-birth2')
     zip: By=By.id('zipcode')
     //test3
-    findaStore: By=By.xpath('(//a[@class="ct_Link_Default_Medium"])[1]')
-    zipCode: By=By.xpath('(//input[@name="locationEntry"])[2]')
+    findaStore: By=By.id('findStoreFLContainer')
+    zipCode: By=By.xpath('(//input)[31]')
     //test4
-    search: By=By.xpath('(//svg[@class="icon"])[19]')
-    prada: By=By.css('.ais-SearchBox-input')
+    shoppingBag: By=By.xpath('//a[@id="orderCalculateUrlMob"]')
+    shopSunglasses: By=By.xpath('(//a[@class="button-medium-black-fill"])[2]')
+    versace: By=By.xpath('(//img[@class="slider-image default-image"])[1]')
+    addTobag: By=By.css('#addToCartMainBtn')
     //test5
     language: By=By.css('.selected-language')
-    selectEspanol: By=By.css('.selected-language')
+    UnitedStatesEspanol: By=By.css('.selected-language')
 
     constructor(){
         super({url: "https://www.lenscrafters.com/lc-us"})
